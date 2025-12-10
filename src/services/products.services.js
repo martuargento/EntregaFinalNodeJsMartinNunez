@@ -2,7 +2,7 @@ import {
   agregarProducto,
   eliminarProducto,
   obtenerProductos,
-  obtenerProductoPorId, // 1. Importamos la función correcta
+  obtenerProductoPorId, 
 } from "../models/products.models.js";
 
 export const addProductService = async (product) => {
