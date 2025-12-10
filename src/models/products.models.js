@@ -11,9 +11,11 @@ export function obtenerProductoPorId(id) {
       if (docSnap.exists()) {
         console.log("Datos del documento:", docSnap.data());
         res(docSnap.data())
+        res({ id: docSnap.id, ...docSnap.data() });
       } else {
         console.log("No existe tal documento!");
         res()
+        res(null);
       }      
     }catch(error){
       rej("No se ha podido obtener el producto ", error)
