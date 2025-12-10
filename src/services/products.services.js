@@ -1,4 +1,9 @@
-import {agregarProducto, eliminarProducto, obtenerProductos} from "../models/products.models.js"
+import {
+  agregarProducto,
+  eliminarProducto,
+  obtenerProductos,
+  obtenerProductoPorId, // 1. Importamos la función correcta
+} from "../models/products.models.js";
 
 export const addProductService = async (product) => {
   return(
@@ -47,13 +52,11 @@ export const getProductByIdService = async (id) => {
   return(
     new Promise(async (res, rej) => {
       try{
-        const products = await obtenerProductos(id)
-        res(products)
+        const product = await obtenerProductoPorId(id);
+        res(product);
       }catch(error){
-        rej(error) 
+        rej(error);
       }
     })
   )
   };
-
-
